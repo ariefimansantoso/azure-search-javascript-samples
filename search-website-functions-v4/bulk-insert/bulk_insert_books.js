@@ -7,8 +7,8 @@ import {
 } from '@azure/search-documents';
 
 // Azure AI Search resource settings
-const SEARCH_ENDPOINT = 'https://YOUR-RESOURCE-NAME.search.windows.net';
-const SEARCH_ADMIN_KEY = 'YOUR-RESOURCE-ADMIN-KEY';
+const SEARCH_ENDPOINT = 'https://my-cog-search-demo-svc-arief.search.windows.net';
+const SEARCH_ADMIN_KEY = 'xgX5JX5mvwdrPL38GtLbQxHCt1E4evdU9VMBLz9wP3AzSeBGNdyn';
 
 // Azure AI Search index settings
 const SEARCH_INDEX_NAME = 'good-books';
@@ -42,7 +42,7 @@ const insertData = async (data) => {
 
   for (let i = 0; i < data.length; i++) {
     const row = data[i];
-
+    //console.log(row.title);
     // Convert string data to typed data
     // Types are defined in schema
     batchArray.push({
@@ -77,7 +77,7 @@ const insertData = async (data) => {
       small_image_url: row.small_image_url
     });
 
-    console.log(`${i}`);
+    //console.log(`${i}`);
 
     // Insert batch into Index
     if (batchArray.length % BATCH_SIZE === 0) {
